@@ -2,7 +2,27 @@
 
 [ext_resource type="Script" uid="uid://dyy7blueajit2" path="res://build_menu.gd" id="1_3k0m2"]
 [ext_resource type="PackedScene" uid="uid://ds014wp8hvnqq" path="res://Entities/ArcherTower/archer.tscn" id="2_c7ibw"]
-[ext_resource type="PackedScene" uid="uid://bivggcnwfp4eg" path="res://Entities/MageTower/mage_tower.tscn" id="3_5gdgk"]
+[ext_resource type="Texture2D" uid="uid://g4ebgtlnet3c" path="res://Entities/MageTower/Magic.png" id="3_wgtaj"]
+[ext_resource type="Script" path="res://Entities/MageTower/mage_tower.gd" id="4_3nra6"]
+[ext_resource type="PackedScene" uid="uid://dcx7ep81mtbpi" path="res://Entities/CanonTower/canon.tscn" id="4_5gdgk"]
+[ext_resource type="AudioStream" uid="uid://bcgxkj3yrmj2p" path="res://Entities/MageTower/beam_sound.ogg" id="5_6tgqd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jggnj"]
+
+[sub_resource type="PackedScene" id="PackedScene_bqunm"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("MageTower", "Sprite2D", "scale", "texture", "script", "Detection", "Area2D", "enemies", "CollisionShape2D", "CollisionShape2D", "scale", "shape", "Shootpoint", "Marker2D", "position", "Timer", "Timer", "BeamLine", "Line2D", "points", "width", "default_color", "beam_sound", "AudioStreamPlayer2D", "stream"),
+"node_count": 7,
+"node_ids": PackedInt32Array(136181994, 1410407014, 1152506081, 948155632, 1763693134, 334434547, 44513908),
+"node_paths": [NodePath("."), NodePath("./Detection"), NodePath("."), NodePath("."), NodePath("."), NodePath(".")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 3, 2, 0, 3, 1, 4, 2, 0, 1073741824, 0, 6, 5, -1, 0, 1, 7, 1073741825, 0, 9, 8, -1, 2, 10, 3, 11, 4, 0, 1073741826, 0, 13, 12, -1, 1, 14, 5, 0, 1073741827, 0, 16, 15, -1, 0, 0, 1073741828, 0, 18, 17, -1, 3, 19, 6, 20, 7, 21, 8, 0, 1073741829, 0, 23, 22, -1, 1, 24, 9, 0),
+"variants": [Vector2(0.19, 0.19), ExtResource("3_wgtaj"), ExtResource("4_3nra6"), Vector2(95, 95), SubResource("CircleShape2D_jggnj"), Vector2(5.2631607, -278.94736), PackedVector2Array(1410.5262, -1147.3684), 7.0, Color(0.03137255, 0.58431375, 1, 1), ExtResource("5_6tgqd")],
+"version": 3
+}
 
 [node name="BuildMenu" type="Control" unique_id=1754270701]
 layout_mode = 3
@@ -16,7 +36,8 @@ offset_right = -80.343994
 offset_bottom = 40.008
 script = ExtResource("1_3k0m2")
 archer_scene = ExtResource("2_c7ibw")
-mage_scene = ExtResource("3_5gdgk")
+mage_scene = SubResource("PackedScene_bqunm")
+canon_scene = ExtResource("4_5gdgk")
 
 [node name="Panel" type="Panel" parent="." unique_id=46504478]
 layout_mode = 1
@@ -47,10 +68,15 @@ alignment = 1
 layout_mode = 2
 text = "mage : 150"
 
+[node name="canon_button" type="Button" parent="Panel/HBoxContainer" unique_id=1960527757]
+layout_mode = 2
+text = "canon"
+
 [node name="archer_button" type="Button" parent="Panel/HBoxContainer" unique_id=375033594]
 layout_mode = 2
 text = "archer : 100
 "
 
 [connection signal="pressed" from="Panel/HBoxContainer/mage_button" to="." method="_on_mage_button_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/canon_button" to="." method="_on_mage_button_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/archer_button" to="." method="_on_archer_button_pressed"]
