@@ -25,7 +25,7 @@ func _process(delta):
 	if abs(movement.x) > abs(movement.y):
 		anim.play("walk_left")
 	else:
-		anim.play("walk_normal")
+		anim.play("normal")
 
 func take_damage(amount: float):
 	health -= amount

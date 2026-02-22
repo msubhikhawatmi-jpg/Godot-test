@@ -26,3 +26,4 @@ curve = SubResource("Curve2D_qndhv")
 [node name="Spawner" parent="." unique_id=1118648742 instance=ExtResource("4_snglc")]
 enemy_scene = ExtResource("3_7pb34")
 path = NodePath("../Path2D")
+time_between_waves = 15.085
