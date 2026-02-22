@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bh7j3clk87vd8" path="res://inspiration_map.png" id="1_7pb34"]
 [ext_resource type="PackedScene" uid="uid://cbcedi5arp13q" path="res://Entities/Sokari/sokari.tscn" id="3_7pb34"]
-[ext_resource type="PackedScene" uid="uid://ds014wp8hvnqq" path="res://scenes/archer.tscn" id="4_qedf2"]
+[ext_resource type="PackedScene" uid="uid://ds014wp8hvnqq" path="res://Entities/ArcherTower/archer.tscn" id="4_qedf2"]
 [ext_resource type="PackedScene" uid="uid://cf3f2u455tcd6" path="res://Entities/Spawner/spawner.tscn" id="4_snglc"]
 [ext_resource type="PackedScene" uid="uid://dublrvta6nynf" path="res://scenes/Bullet.tscn" id="6_kalee"]
 
@@ -28,8 +28,11 @@ curve = SubResource("Curve2D_qndhv")
 [node name="Spawner" parent="." unique_id=1118648742 instance=ExtResource("4_snglc")]
 enemy_scene = ExtResource("3_7pb34")
 path = NodePath("../Path2D")
-time_between_waves = 15.085
+enemies_per_wave = 54
+time_between_waves = 4.37
 
 [node name="Archer" parent="." unique_id=136181994 instance=ExtResource("4_qedf2")]
 position = Vector2(563.99994, 430)
+target_mode = 0
+fire_rate = 0.285
 bullet_scene = ExtResource("6_kalee")

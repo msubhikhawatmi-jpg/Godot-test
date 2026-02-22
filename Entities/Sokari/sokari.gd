@@ -29,8 +29,14 @@ func _process(delta):
 
 func take_damage(amount: float):
 	health -= amount
+	flash_red()
 	if health <= 0:
 		die()
+
+func flash_red():
+	anim.modulate = Color(1, 0, 0)
+	await get_tree().create_timer(0.15).timeout
+	anim.modulate = Color(1, 1, 1)
 
 func die():
 	follow.queue_free()
