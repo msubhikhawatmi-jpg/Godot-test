@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cwknyjvre43mk"]
 
-[ext_resource type="Script" uid="uid://cxnvhr8ou5oj6" path="res://build_spot.gd" id="1_up1tc"]
+[ext_resource type="Script" uid="uid://cxnvhr8ou5oj6" path="res://scenes/build_menu/build_spot.gd" id="1_up1tc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_linjf"]
 radius = 36.0

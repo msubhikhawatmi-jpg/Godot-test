@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bgt56c5435s5x"]
 
 [ext_resource type="Texture2D" uid="uid://bh7j3clk87vd8" path="res://inspiration_map.png" id="1_7pb34"]
-[ext_resource type="Script" path="res://scenes/first_level.gd" id="1_qndhv"]
+[ext_resource type="Script" uid="uid://ukfgn0hae2p1" path="res://scenes/first_level.gd" id="1_qndhv"]
+[ext_resource type="PackedScene" uid="uid://dlrie524bhab4" path="res://scenes/HUD/hud.tscn" id="2_qedf2"]
 [ext_resource type="PackedScene" uid="uid://cbcedi5arp13q" path="res://Entities/Sokari/sokari.tscn" id="3_7pb34"]
-[ext_resource type="PackedScene" uid="uid://dcx7ep81mtbpi" path="res://Entities/CanonTower/canon.tscn" id="3_qedf2"]
 [ext_resource type="PackedScene" uid="uid://cf3f2u455tcd6" path="res://Entities/Spawner/spawner.tscn" id="4_snglc"]
 [ext_resource type="PackedScene" uid="uid://born81n7pntxl" path="res://scenes/build_menu/build_menu.tscn" id="5_qndhv"]
 [ext_resource type="PackedScene" uid="uid://cwknyjvre43mk" path="res://scenes/build_menu/build_spot.tscn" id="6_qedf2"]
@@ -31,7 +31,9 @@ curve = SubResource("Curve2D_qndhv")
 [node name="Spawner" parent="." unique_id=1118648742 instance=ExtResource("4_snglc")]
 enemy_scene = ExtResource("3_7pb34")
 path = NodePath("../Path2D")
-time_between_waves = 15.085
+enemies_per_wave = 20
+time_between_enemies = 1.92
+time_between_waves = 4.97
 
 [node name="BuildMenu" parent="." unique_id=1754270701 instance=ExtResource("5_qndhv")]
 anchors_preset = 0
@@ -43,22 +45,25 @@ offset_left = 411.0
 offset_top = 263.0
 offset_right = 451.0
 offset_bottom = 303.0
-canon_scene = ExtResource("3_qedf2")
 
-[node name="BuildSpot" parent="." unique_id=1869582256 instance=ExtResource("6_qedf2")]
-position = Vector2(212, 428)
+[node name="HUD" parent="." unique_id=153561350 instance=ExtResource("2_qedf2")]
 
-[node name="BuildSpot3" parent="." unique_id=1057789250 instance=ExtResource("6_qedf2")]
-position = Vector2(853, 430)
+[node name="BuildSpot" parent="." unique_id=1869582256 groups=["build_spots"] instance=ExtResource("6_qedf2")]
+position = Vector2(856, 445)
 
-[node name="BuildSpot4" parent="." unique_id=1373302764 instance=ExtResource("6_qedf2")]
-position = Vector2(1019, 292)
+[node name="BuildSpot2" parent="." unique_id=1585518028 groups=["build_spots"] instance=ExtResource("6_qedf2")]
+position = Vector2(568, 450)
 
-[node name="BuildSpot2" parent="." unique_id=1248499571 instance=ExtResource("6_qedf2")]
-position = Vector2(566, 430)
+[node name="BuildSpot3" parent="." unique_id=1195511374 groups=["build_spots"] instance=ExtResource("6_qedf2")]
+position = Vector2(218, 447)
+
+[node name="BuildSpot4" parent="." unique_id=1268353845 groups=["build_spots"] instance=ExtResource("6_qedf2")]
+position = Vector2(485, 270)
+
+[node name="BuildSpot5" parent="." unique_id=145933620 groups=["build_spots"] instance=ExtResource("6_qedf2")]
+position = Vector2(153, 287)
+
+[node name="BuildSpot6" parent="." unique_id=1945812205 groups=["build_spots"] instance=ExtResource("6_qedf2")]
+position = Vector2(1018, 315)
 
 [connection signal="tower_selected" from="BuildMenu" to="." method="_on_build_menu_tower_selected"]
-[connection signal="spot_clicked" from="BuildSpot" to="." method="_on_build_spot_spot_clicked"]
-[connection signal="spot_clicked" from="BuildSpot3" to="." method="_on_build_spot_spot_clicked"]
-[connection signal="spot_clicked" from="BuildSpot4" to="." method="_on_build_spot_spot_clicked"]
-[connection signal="spot_clicked" from="BuildSpot2" to="." method="_on_build_spot_2_spot_clicked"]

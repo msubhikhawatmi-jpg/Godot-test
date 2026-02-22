@@ -1,19 +1,20 @@
 [gd_scene format=3 uid="uid://dcx7ep81mtbpi"]
 
 [ext_resource type="Texture2D" uid="uid://bfetb0lgjeycs" path="res://Entities/CanonTower/Canon.png" id="1_4yh7d"]
-[ext_resource type="Script" uid="uid://df285pk6io7as" path="res://Entities/ArcherTower/archerShot.gd" id="2_q0llk"]
-[ext_resource type="PackedScene" uid="uid://dublrvta6nynf" path="res://scenes/Bullet.tscn" id="3_hnniu"]
+[ext_resource type="Script" uid="uid://bck0u1mc5juvq" path="res://Entities/CanonTower/canon.gd" id="2_1gfqq"]
+[ext_resource type="PackedScene" uid="uid://5xps1udlivyg" path="res://scenes/CanonBall/canonball.tscn" id="3_4yh7d"]
 [ext_resource type="AudioStream" uid="uid://cf4wh46nktitx" path="res://Entities/ArcherTower/shoot.ogg" id="4_bsom7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jggnj"]
 radius = 21.972086
 
-[node name="Canon" type="Sprite2D" unique_id=136181994]
+[node name="Canon" type="Sprite2D" unique_id=136181994 groups=["enemies"]]
 scale = Vector2(0.19, 0.19)
 texture = ExtResource("1_4yh7d")
-script = ExtResource("2_q0llk")
-target_mode = 1
-bullet_scene = ExtResource("3_hnniu")
+script = ExtResource("2_1gfqq")
+damage = 40.99
+fire_rate = 3.45
+bullet_scene = ExtResource("3_4yh7d")
 
 [node name="Detection" type="Area2D" parent="." unique_id=1410407014 groups=["enemies"]]
 
