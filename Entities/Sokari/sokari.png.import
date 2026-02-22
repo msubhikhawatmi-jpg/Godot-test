@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc4dlybigloh0"
-path="res://.godot/imported/Snapchat-1340255626_-_Copy-removebg-preview.png-cb288794be36133b82289096a8c33711.ctex"
+uid="uid://dtv258js77jue"
+path="res://.godot/imported/sokari.png-9c7f284c8dc4c261d3c57a2e8abfefc0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/Sokari/Snapchat-1340255626_-_Copy-removebg-preview.png"
-dest_files=["res://.godot/imported/Snapchat-1340255626_-_Copy-removebg-preview.png-cb288794be36133b82289096a8c33711.ctex"]
+source_file="res://Entities/Sokari/sokari.png"
+dest_files=["res://.godot/imported/sokari.png-9c7f284c8dc4c261d3c57a2e8abfefc0.ctex"]
 
 [params]
 
