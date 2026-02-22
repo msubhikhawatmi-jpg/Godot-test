@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dublrvta6nynf"]
+
+[ext_resource type="Script" uid="uid://dmts4l8hbnmrk" path="res://scenes/bullet.gd" id="1_hf8mt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2ropf"]
+
+[node name="Node2D" type="Node2D" unique_id=775815417]
+
+[node name="Bullet" type="CharacterBody2D" parent="." unique_id=817009839]
+script = ExtResource("1_hf8mt")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bullet" unique_id=323601636]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bullet" unique_id=1539750666]
+shape = SubResource("CircleShape2D_2ropf")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Bullet" unique_id=745079691]
+
+[node name="ColorRect" type="ColorRect" parent="Bullet" unique_id=1060034200]
+offset_right = 10.0
+offset_bottom = 10.0
+color = Color(1, 0.16078432, 0, 1)
