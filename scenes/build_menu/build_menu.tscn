@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dyy7blueajit2" path="res://build_menu.gd" id="1_3k0m2"]
 [ext_resource type="PackedScene" uid="uid://ds014wp8hvnqq" path="res://Entities/ArcherTower/archer.tscn" id="2_c7ibw"]
 [ext_resource type="PackedScene" uid="uid://bivggcnwfp4eg" path="res://Entities/MageTower/mage_tower.tscn" id="3_5gdgk"]
+[ext_resource type="PackedScene" uid="uid://dcx7ep81mtbpi" path="res://Entities/CanonTower/canon.tscn" id="4_5gdgk"]
 
 [node name="BuildMenu" type="Control" unique_id=1754270701]
 layout_mode = 3
@@ -17,6 +18,7 @@ offset_bottom = 40.008
 script = ExtResource("1_3k0m2")
 archer_scene = ExtResource("2_c7ibw")
 mage_scene = ExtResource("3_5gdgk")
+canon_scene = ExtResource("4_5gdgk")
 
 [node name="Panel" type="Panel" parent="." unique_id=46504478]
 layout_mode = 1
@@ -46,10 +48,15 @@ alignment = 1
 layout_mode = 2
 text = "mage"
 
+[node name="canon_button" type="Button" parent="Panel/HBoxContainer" unique_id=1960527757]
+layout_mode = 2
+text = "canon"
+
 [node name="archer_button" type="Button" parent="Panel/HBoxContainer" unique_id=375033594]
 layout_mode = 2
 text = "archer
 "
 
 [connection signal="pressed" from="Panel/HBoxContainer/mage_button" to="." method="_on_mage_button_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/canon_button" to="." method="_on_mage_button_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/archer_button" to="." method="_on_archer_button_pressed"]
