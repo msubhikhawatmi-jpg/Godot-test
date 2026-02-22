@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bivggcnwfp4eg"]
+
+[ext_resource type="Texture2D" uid="uid://g4ebgtlnet3c" path="res://Magic.png" id="1_mfq7s"]
+[ext_resource type="Script" uid="uid://df285pk6io7as" path="res://scenes/archerShot.gd" id="2_eayd1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jggnj"]
+
+[node name="MageTower" type="Sprite2D" unique_id=136181994]
+scale = Vector2(0.19, 0.19)
+texture = ExtResource("1_mfq7s")
+script = ExtResource("2_eayd1")
+
+[node name="Detection" type="Area2D" parent="." unique_id=1410407014 groups=["enemies"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection" unique_id=1152506081]
+scale = Vector2(95, 95)
+shape = SubResource("CircleShape2D_jggnj")
+
+[node name="Shootpoint" type="Marker2D" parent="." unique_id=948155632]
+position = Vector2(89.47369, -89.47369)
+
+[node name="Timer" type="Timer" parent="." unique_id=1763693134]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

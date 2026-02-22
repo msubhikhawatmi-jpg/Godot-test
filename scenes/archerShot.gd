@@ -16,7 +16,6 @@ func _ready():
 	timer.start()
 	detection.body_entered.connect(_on_body_entered)
 	detection.body_exited.connect(_on_body_exited)
-	timer.timeout.connect(_on_timer_timeout)
 
 func _on_body_entered(body):
 	if body is CharacterBody2D and target == null:

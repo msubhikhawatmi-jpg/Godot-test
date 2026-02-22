@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ds014wp8hvnqq" path="res://scenes/archer.tscn" id="4_qedf2"]
 [ext_resource type="PackedScene" uid="uid://cf3f2u455tcd6" path="res://Entities/Spawner/spawner.tscn" id="4_snglc"]
 [ext_resource type="PackedScene" uid="uid://dublrvta6nynf" path="res://scenes/Bullet.tscn" id="6_kalee"]
+[ext_resource type="PackedScene" uid="uid://bivggcnwfp4eg" path="res://Entities/MageTower/mage_tower.tscn" id="6_qndhv"]
 
 [sub_resource type="Curve2D" id="Curve2D_qndhv"]
 _data = {
@@ -32,4 +33,9 @@ time_between_waves = 15.085
 
 [node name="Archer" parent="." unique_id=136181994 instance=ExtResource("4_qedf2")]
 position = Vector2(563.99994, 430)
+fire_rate = 1.5
+bullet_scene = ExtResource("6_kalee")
+
+[node name="MageTower" parent="." unique_id=1871619287 instance=ExtResource("6_qndhv")]
+position = Vector2(1017.99994, 296)
 bullet_scene = ExtResource("6_kalee")
