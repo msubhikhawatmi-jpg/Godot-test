@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b6h3m15whhoxg"]
+
+[ext_resource type="Texture2D" uid="uid://cc4dlybigloh0" path="res://Entities/Sokari/Snapchat-1340255626_-_Copy-removebg-preview.png" id="1_b8wc4"]
+
+[node name="Enemy" type="Node2D" unique_id=1647012737]
+position = Vector2(53, 25)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1480913174]
+position = Vector2(1.9669533e-06, 0)
+scale = Vector2(0.044999972, 0.047)
+texture = ExtResource("1_b8wc4")
