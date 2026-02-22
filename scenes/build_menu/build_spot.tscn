@@ -3,10 +3,11 @@
 [ext_resource type="Script" uid="uid://cxnvhr8ou5oj6" path="res://build_spot.gd" id="1_up1tc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_linjf"]
-radius = 39.20459
+radius = 36.0
 
 [node name="BuildSpot" type="Area2D" unique_id=1869582256]
 script = ExtResource("1_up1tc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1095174737]
+position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_linjf")
