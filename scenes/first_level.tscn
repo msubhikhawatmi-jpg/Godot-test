@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bh7j3clk87vd8" path="res://inspiration_map.png" id="1_7pb34"]
 [ext_resource type="PackedScene" uid="uid://cbcedi5arp13q" path="res://Entities/Sokari/sokari.tscn" id="3_7pb34"]
-[ext_resource type="PackedScene" uid="uid://efn58fbyca83" path="res://scenes/archer.tscn" id="4_qedf2"]
+[ext_resource type="PackedScene" uid="uid://ds014wp8hvnqq" path="res://scenes/archer.tscn" id="4_qedf2"]
 [ext_resource type="PackedScene" uid="uid://cf3f2u455tcd6" path="res://Entities/Spawner/spawner.tscn" id="4_snglc"]
 [ext_resource type="PackedScene" uid="uid://dublrvta6nynf" path="res://scenes/Bullet.tscn" id="6_kalee"]
 
@@ -22,10 +22,6 @@ position = Vector2(576.5, 322.50003)
 scale = Vector2(0.60260415, 0.6064815)
 texture = ExtResource("1_7pb34")
 
-[node name="Archer" parent="Map" unique_id=136181994 instance=ExtResource("4_qedf2")]
-position = Vector2(562, 425)
-bullet_scene = ExtResource("6_kalee")
-
 [node name="Path2D" type="Path2D" parent="." unique_id=264212208]
 curve = SubResource("Curve2D_qndhv")
 
@@ -33,3 +29,7 @@ curve = SubResource("Curve2D_qndhv")
 enemy_scene = ExtResource("3_7pb34")
 path = NodePath("../Path2D")
 time_between_waves = 15.085
+
+[node name="Archer" parent="." unique_id=136181994 instance=ExtResource("4_qedf2")]
+position = Vector2(563.99994, 430)
+bullet_scene = ExtResource("6_kalee")

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cbcedi5arp13q"]
 
-[ext_resource type="Script" path="res://Entities/Sokari/sokari.gd" id="1_oa4jh"]
+[ext_resource type="Script" uid="uid://uuyytfyyhtnx" path="res://Entities/Sokari/sokari.gd" id="1_oa4jh"]
 [ext_resource type="Texture2D" uid="uid://dtv258js77jue" path="res://Entities/Sokari/sokari.png" id="2_oa4jh"]
 [ext_resource type="Texture2D" uid="uid://ccyaa3x0vref7" path="res://Entities/Sokari/sokari_left.png" id="3_4vkng"]
 
@@ -47,6 +47,8 @@ sprite_frames = SubResource("SpriteFrames_sn4r7")
 animation = &"normal"
 autoplay = "normal"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D" unique_id=165803690]
-position = Vector2(5.049042e-07, 42.354435)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=165803690]
+position = Vector2(41.796585, -10.894934)
+rotation = -1.6283922
+scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("CapsuleShape2D_4vkng")

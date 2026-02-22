@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://efn58fbyca83"]
+[gd_scene format=3 uid="uid://ds014wp8hvnqq"]
 
 [ext_resource type="Texture2D" uid="uid://c5ryld83sblon" path="res://Archer.png" id="1_jggnj"]
-[ext_resource type="Script" uid="uid://bife6vpbd5yoi" path="res://scenes/archer.gd" id="2_b0l3x"]
+[ext_resource type="Script" uid="uid://df285pk6io7as" path="res://scenes/archerShot.gd" id="2_b0l3x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jggnj"]
 
@@ -21,4 +21,4 @@ position = Vector2(89.47369, -89.47369)
 
 [node name="Timer" type="Timer" parent="." unique_id=1763693134]
 
-[connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
