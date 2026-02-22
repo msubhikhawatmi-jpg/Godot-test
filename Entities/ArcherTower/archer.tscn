@@ -1,16 +1,19 @@
 [gd_scene format=3 uid="uid://ds014wp8hvnqq"]
 
-[ext_resource type="Texture2D" uid="uid://c5ryld83sblon" path="res://Archer.png" id="1_jggnj"]
+[ext_resource type="Texture2D" uid="uid://c5ryld83sblon" path="res://Entities/ArcherTower/Archer.png" id="1_jggnj"]
 [ext_resource type="Script" uid="uid://df285pk6io7as" path="res://Entities/ArcherTower/archerShot.gd" id="2_b0l3x"]
+[ext_resource type="PackedScene" uid="uid://dublrvta6nynf" path="res://scenes/Bullet.tscn" id="3_vsb3r"]
 [ext_resource type="AudioStream" uid="uid://cf4wh46nktitx" path="res://Entities/ArcherTower/shoot.ogg" id="3_wcggu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jggnj"]
+radius = 21.972086
 
 [node name="Archer" type="Sprite2D" unique_id=136181994]
 scale = Vector2(0.19, 0.19)
 texture = ExtResource("1_jggnj")
 script = ExtResource("2_b0l3x")
 target_mode = 1
+bullet_scene = ExtResource("3_vsb3r")
 
 [node name="Detection" type="Area2D" parent="." unique_id=1410407014 groups=["enemies"]]
 
@@ -25,5 +28,3 @@ position = Vector2(89.47369, -89.47369)
 
 [node name="arrow_sound" type="AudioStreamPlayer2D" parent="." unique_id=738444804]
 stream = ExtResource("3_wcggu")
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

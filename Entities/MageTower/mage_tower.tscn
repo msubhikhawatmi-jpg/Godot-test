@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://bivggcnwfp4eg"]
 
-[ext_resource type="Texture2D" uid="uid://g4ebgtlnet3c" path="res://Magic.png" id="1_mfq7s"]
+[ext_resource type="Texture2D" uid="uid://g4ebgtlnet3c" path="res://Entities/MageTower/Magic.png" id="1_mfq7s"]
 [ext_resource type="Script" uid="uid://baccyo1nw1012" path="res://Entities/MageTower/mage_tower.gd" id="2_mfq7s"]
+[ext_resource type="AudioStream" uid="uid://bcgxkj3yrmj2p" path="res://Entities/MageTower/beam_sound.ogg" id="3_eayd1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jggnj"]
 
@@ -17,8 +18,14 @@ scale = Vector2(95, 95)
 shape = SubResource("CircleShape2D_jggnj")
 
 [node name="Shootpoint" type="Marker2D" parent="." unique_id=948155632]
-position = Vector2(89.47369, -89.47369)
+position = Vector2(5.2631607, -278.94736)
 
 [node name="Timer" type="Timer" parent="." unique_id=1763693134]
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="BeamLine" type="Line2D" parent="." unique_id=334434547]
+points = PackedVector2Array(1410.5262, -1147.3684)
+width = 7.0
+default_color = Color(0.03137255, 0.58431375, 1, 1)
+
+[node name="beam_sound" type="AudioStreamPlayer2D" parent="." unique_id=44513908]
+stream = ExtResource("3_eayd1")

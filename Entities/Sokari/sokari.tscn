@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cbcedi5arp13q"]
 
-[ext_resource type="Script" path="res://Entities/Sokari/sokari.gd" id="1_oa4jh"]
+[ext_resource type="Script" uid="uid://uuyytfyyhtnx" path="res://Entities/Sokari/sokari.gd" id="1_oa4jh"]
 [ext_resource type="Texture2D" uid="uid://dtv258js77jue" path="res://Entities/Sokari/sokari.png" id="2_oa4jh"]
 [ext_resource type="Texture2D" uid="uid://ccyaa3x0vref7" path="res://Entities/Sokari/sokari_left.png" id="3_4vkng"]
 
@@ -39,7 +39,8 @@ height = 254.12662
 rotation = 1.6283922
 scale = Vector2(0.118051395, 0.118051395)
 script = ExtResource("1_oa4jh")
-speed = 75.0
+max_health = 45.0
+speed = 55.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=13545735]
 position = Vector2(-0.4876186, -8.4568405)
