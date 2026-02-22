@@ -1,20 +1,21 @@
 [gd_scene format=3 uid="uid://bgt56c5435s5x"]
 
 [ext_resource type="Texture2D" uid="uid://bh7j3clk87vd8" path="res://inspiration_map.png" id="1_7pb34"]
-[ext_resource type="Script" uid="uid://d20ladfeormmf" path="res://Entities/Sokari/path_follow_2d.gd" id="2_snglc"]
-[ext_resource type="Texture2D" uid="uid://cc4dlybigloh0" path="res://Entities/Sokari/Snapchat-1340255626_-_Copy-removebg-preview.png" id="3_385i6"]
+[ext_resource type="PackedScene" uid="uid://cbcedi5arp13q" path="res://Entities/Sokari/sokari.tscn" id="3_7pb34"]
+[ext_resource type="PackedScene" uid="uid://cf3f2u455tcd6" path="res://Entities/Spawner/spawner.tscn" id="4_snglc"]
 
 [sub_resource type="Curve2D" id="Curve2D_qndhv"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 969, 640, 0, 0, 0, 0, 963, 582, 0, 0, 0, 0, 950, 453, 0, 0, 0, 0, 930, 388, 0, 0, 0, 0, 859, 370, 0, 0, 0, 0, 748, 357, 0, 0, 0, 0, 675, 370, 0, 0, 0, 0, 600, 378, 0, 0, 0, 0, 502, 375, 0, 0, 0, 0, 402, 374, 0, 0, 0, 0, 302, 371, 0, 0, 0, 0, 237, 373, 0, 0, 0, 0, 166, 388, 0, 0, 0, 0, 106, 434, 0, 0, 0, 0, 95, 482, 0, 0, 0, 0, 71, 546, 0, 0, 0, 0, 33, 580, 0, 0, 0, 0, -14, 584)
+"points": PackedVector2Array(0, 0, 0, 0, 969, 640, 0, 0, 0, 0, 963, 582, 0, 0, 0, 0, 962, 462, 0, 0, 0, 0, 958, 443, 0, 0, 0, 0, 951, 411, 0, 0, 0, 0, 935, 388, 0, 0, 0, 0, 899, 378, 0, 0, 0, 0, 859, 370, 0, 0, 0, 0, 748, 357, 0, 0, 0, 0, 675, 370, 0, 0, 0, 0, 600, 378, 0, 0, 0, 0, 502, 375, 0, 0, 0, 0, 402, 374, 0, 0, 0, 0, 302, 371, 0, 0, 0, 0, 237, 373, 0, 0, 0, 0, 166, 388, 0, 0, 0, 0, 106, 434, 0, 0, 0, 0, 95, 482, 0, 0, 0, 0, 71, 546, 0, 0, 0, 0, 33, 580, 0, 0, 0, 0, -14, 584)
 }
-point_count = 18
+point_count = 21
 
 [node name="firstLevel" type="Node2D" unique_id=938993092]
 
 [node name="Map" type="Node" parent="." unique_id=199353938]
 
-[node name="mapSprite" type="Sprite2D" parent="." unique_id=1313084076]
+[node name="mapSprite" type="Sprite2D" parent="Map" unique_id=1313084076]
+z_index = -1
 position = Vector2(576.5, 322.50003)
 scale = Vector2(0.60260415, 0.6064815)
 texture = ExtResource("1_7pb34")
@@ -22,13 +23,7 @@ texture = ExtResource("1_7pb34")
 [node name="Path2D" type="Path2D" parent="." unique_id=264212208]
 curve = SubResource("Curve2D_qndhv")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=849409958]
-position = Vector2(969, 640)
-rotation = -1.673878
-script = ExtResource("2_snglc")
-
-[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D" unique_id=916804740]
-position = Vector2(9.089441, -10.118441)
-rotation = 1.6283922
-scale = Vector2(0.118051395, 0.118051395)
-texture = ExtResource("3_385i6")
+[node name="Spawner" parent="." unique_id=1118648742 instance=ExtResource("4_snglc")]
+enemy_scene = ExtResource("3_7pb34")
+path = NodePath("../Path2D")
+time_between_waves = 15.085
